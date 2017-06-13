@@ -13,3 +13,4 @@ media/
 clusters-apps
 migrations/*
 media/
+db.sqlite3
