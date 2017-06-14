@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import socket
+from django.urls import reverse_lazy
+hostname = socket.gethostname()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +30,7 @@ SECRET_KEY = '3@+wn)qdzs3i@u#rc9@jlw__n7u@3y)c#2x#$%9fhln3-70s@s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'common.apps.users',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +60,7 @@ ROOT_URLCONF = 'staff.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,12 +79,36 @@ WSGI_APPLICATION = 'staff.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if hostname == 'LAPTOP-TJHAEPAJ':
+    DATABASES = {
+        'default': {
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             #Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+             'ENGINE': 'django.db.backends.mysql',
+             # Or path to database file if using sqlite3.
+             'NAME': 'tripanels',
+             'USER': 'root',                      # Not used with sqlite3.
+             'PASSWORD': 'mysql.com',                  # Not used with sqlite3.
+             # Set to empty string for localhost. Not used with sqlite3.
+             'HOST': 'localhost',
+             # Set to empty string for default. Not used with sqlite3.
+             'PORT': '3306',
+             #'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'tripanels', #Your db name
+            'USER': 'tripanels', #Your db user name
+            'PASSWORD':'Data8ase-tripanels',
+            'HOST':'45.35.50.34',
+            'PORT':'3306',
+        }
+    }
+
 
 
 # Password validation
@@ -111,10 +141,13 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
+LOGIN_URL = reverse_lazy('users:login')
