@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crudbuilder %}
+{% load render_table from django_tables2 %}
+
+{% block styles %}
+{% endblock styles %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'staff/home' %}">Home</a></li>
+    <li class="active">Account</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<!--Search-->
+<div class="widget widget-table">
+  <div class="widget-header">
+    <i class="fa fa-search"></i>
+    <h3>Search</h3>
+  </div>
+  <div class="widget-content">
+  	<form class="navbar-form navbar-left" role="form" action="." method="GET">
+        {% include "crudbuilder/widgets/search_widgets.html" %}
+    </form>
+  </div>
+</div>
+
+<!--List-->
+<div class="widget widget-table">
+  <div class="widget-header">
+        <i class=" fa fa-list"></i>
+        <h3>List</h3>
+    </div> <!-- /widget-header -->
+  <div class="widget-content">
+    {% render_table table_objects "crudbuilder/widgets/tables/tables.html" %}
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
