@@ -6,10 +6,10 @@
     <title>Admin Console</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/sidberbar-style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/adminia.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/clientPage.css' %}" />
-
+    <link rel="stylesheet" href="{% static 'css/sidberbar-style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/public.css' %}" />
     {% block styles %}
     {% endblock styles %}
   </head>
@@ -18,66 +18,83 @@
 
     <header>
         {% block header %}
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <ul class="nav navbar-nav navbar-left">
-                <li>
-                  <a class="navbar-brand" href="http://portal.databasemart.net/"><img src="{% static '/img/SCLogo.png' %}"/ ></a>
-                </li>
-              <ul/>
+        <div id="head">
+          <div id="head0">
+            <div id="logo">
+              <img src="{% static 'img/SCLogo.png' %}" / >
             </div>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a>{% if user.first_name != '' and user.last_name != '' %} {{user.first_name}} {{user.last_name}}{% else %}{{user.email}}{% endif %}<span class="caret"></span></a></li>
-                <ul class="dropdown-menu">
-                  <li><a href="{% url 'users:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>LOGOUT</a></li>
-                </ul>
-            </ul>
+            <div id="head1">
+              <div id="all_Products">
+                All Products
+              </div>
+              <div id="myName">
+                <div id="myName0">
+                  {% if user.first_name is not None and user.last_name is not None %} {{user.first_name}} {{user.last_name}}{% else %}{{user.email}}{% endif %}
+                </div>
+                <div class="Hover">
+                  <div class="open">
+                    Open Ticket
+                  </div>
+                  <div class="livechat">
+                    LiveChat
+                  </div>
+                  <div class="logout">
+                    <a href="{% url 'clients:logout' %}">Log out</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </nav>
+      </div>
         {% endblock header %}
     </header>
+    {% block leftSiderbar %}
+    <div id="topNav">
+        <div id="topNav1">
+              <ul>
+                  <li>
+                      <a href="{% url 'home' %}">Home</a>
+                  </li>
+
+                  <li>
+                      <a href="/USER/accounts/users/">Accounts</a>
+                  </li>
+                  {% comment %}
+                  <li>
+                      <a href="{% url 'helpdesk_home' %}">Ticket</a>
+                  </li>
+                  <li>
+                      <a href="/crud/applications/softwares/">Softwares</a>
+                  </li>
+                   {% endcomment %}
+                  <li>
+                      <a href="{% url 'orders:list' %}">Orders</a>
+                  </li>
+                  <li>
+                    <a href="/crud/orders/packageses/">Products</a>
+                  </li>
+
+              </ul>
+        </div>
+    </div>
+    {% endblock leftSiderbar %}
 
     <div class="content-body">
-        <div class="left-siderbar " >
-            <ul id="accordion" class="nav nav-stack">
-            {% comment %}
-              <li>
-                <a href="/crud/accounts/users/"><i class="fa fa-user"></i>Accounts</a>
-              </li>
-              <li>
-                <a href="{% url 'helpdesk_home' %}"><i class="fa fa-tags"></i>Ticket</a>
-              </li>
-              <li>
-                  <a href="/crud/applications/softwares/"><i class="fa fa-cube"></i>Softwares</a>
-              </li>
-              <li>
-                <a href="{% url 'orders:list' %}"><i class="fa fa-book"></i>Orders</a>
-              </li>
-              <li>
-                <a href="/crud/orders/packageses/"><i class="fa fa-server"></i>Products</a>
-              </li>
-            {% endcomment %}
-            </ul>
-            <hr />
-        </div>
-
         <div class="right-siderbar">
           {% block breadcrumb %}{% endblock %}
           {% block content %}{% endblock content %}
           <hr/>
           <div class="upup"></div>
         </div>
-
       </div>
 
 
   </body>
 
-  <script src="{% static '/js/jquery.min.js' %}"></script>
-  <script src="{% static '/js/bootstrap.min.js' %}"></script>
-  <script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/public.js' %}"></script>
+  <!-- <script>
       $(document).ready(function() {
         var Accordion = function(el, multiple) {
           this.el = el || {};
@@ -102,7 +119,7 @@
 
     });
 
-</script>
+</script> -->
 
   {% block scripts %}
   {% endblock scripts %}
