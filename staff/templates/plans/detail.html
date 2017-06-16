@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crudbuilder %}
+{% load render_table from django_tables2 %}
+{% load accounts %}
+
+{% block styles %}
+{% endblock styles %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'software_detail' object.get_software_id %}">Software Detail</a></li>
+    <li class="active">Detail</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<br/>
+
+<div class='container'>
+    <h3>Detail of ( ID: {{object.id}} )</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for field in object|get_model_fields:exclude %}
+        	   <tr>
+        		  <td>{{object|get_verbose_field_name:field.name}}</td>
+                  {% if field.name == 'google_plus' %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% elif field.name == 'twitter' %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% elif field.name == 'facebook' %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% elif field.name == 'linkedin' %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% elif field.name == 'web_site' %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% elif "url" in field.name %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% else %}
+                     <td>{{object|get_value:field.name|default_if_none:""}}</td>
+                  {% endif %}
+
+        	   </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr/>
+
+    <h3>{{inlineformset.fk.related_query_name|title}}</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                {% for field in inlineformset.form.base_fields.keys %}
+                    {% if inlineformset.fk.name != field %}
+                    <th>{{field|undertospaced}}</th>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object|inline_objects:inlineformset.fk %}
+                <tr>
+                {% for field in inlineformset.form.base_fields.keys %}
+                    {% if inlineformset.fk.name != field %}
+                    <td>{{object|get_value:field}}</td>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+
+{% endblock content %}
