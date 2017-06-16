@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a>{% if user.first_name != '' and user.last_name != '' %} {{user.first_name}} {{user.last_name}}{% else %}{{user.email}}{% endif %}<span class="caret"></span></a></li>
                 <ul class="dropdown-menu">
-                  <li><a href="{% url 'staff/logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>LOGOUT</a></li>
+                  <li><a href="{% url 'users:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>LOGOUT</a></li>
                 </ul>
             </ul>
           </div>

@@ -26,4 +26,8 @@ urlpatterns = [
     url(r'^users/', include((user_urls, 'users'))),
     #orders
     url(r'^orders/', include(ordersurl, namespace="orders")),
+    #for data create update delete and retrieve
+    url(r'^crud/',  include('crudbuilder.urls')),
+    #ticket
+    url(r'^ticket/',include('helpdesk.urls')),    
 ]
