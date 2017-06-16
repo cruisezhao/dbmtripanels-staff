@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crudbuilder %}
+{% load render_table from django_tables2 %}
+{% load accounts %}
+
+{% block styles %}
+{% endblock styles %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'staff/home' %}">Home</a></li>
+    <li><a href="{% url 'applications-softwares-list' %}">Softwares</a></li>
+    <li class="active">Detail</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+    {% block actions %}
+        <a class="btn btn-primary pull-right" href="{% url 'applications-softwares-update' object.id %}"><i class="glyphicon glyphicon-pencil"></i> Update</a>
+        <a class="btn btn-warning pull-right" href="{% url 'software_verify' id=object.id %}"><i class="glyphicon glyphicon-pencil"></i>Verify</a>
+        <a class="btn btn-danger pull-right" href="{% url 'software_show' id=object.id %}"><i class="glyphicon glyphicon-pencil"></i>Off</a>
+    {% endblock %}
+<br/>
+
+<div class='container'>
+    <h3>Detail of ( ID: {{object.id}} )</h3>
+    <!--product table -->
+    <h4>Software of Instance</h4>
+    {% include "applications/_table.html" %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for field in object|get_model_fields:exclude %}
+        	   <tr>
+        		  <td>{{object|get_verbose_field_name:field.name}}</td>
+                  {% if "url" in field.name %}
+                     <td><a href="{{object|get_value:field.name|format_url|default_if_none:""}}">{{object|get_value:field.name|default_if_none:""}}</a></td>
+                  {% else %}
+                     <td>{{object|get_value:field.name|default_if_none:""}}</td>
+                  {% endif %}
+
+        	   </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock content %}
