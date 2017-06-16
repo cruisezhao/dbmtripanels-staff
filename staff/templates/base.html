@@ -55,20 +55,24 @@
         	  	  <li>
                     <a href="/crud/accounts/users/">Clients</a>
                   </li>
-                {% comment %}
+                  {% comment %}
                   <li>
-                    <a href="{% url 'helpdesk_home' %}"><i class="fa fa-tags"></i>Ticket</a>
+                    <a href="{% url 'helpdesk_home' %}">Ticket</a>
                   </li>
+                  {% endcomment %}
+                  {% comment %}
                   <li>
                       <a href="/crud/applications/softwares/"><i class="fa fa-cube"></i>Softwares</a>
                   </li>
+                  {% endcomment %}
                   <li>
-                    <a href="{% url 'orders:list' %}"><i class="fa fa-book"></i>Orders</a>
+                    <a href="{% url 'orders:list' %}">Orders</a>
                   </li>
+                  {% comment %}
                   <li>
                     <a href="/crud/orders/packageses/"><i class="fa fa-server"></i>Products</a>
                   </li>
-                {% endcomment %}
+                   {% endcomment %}
         	  	</ul>
     	  </div>
     </div>
