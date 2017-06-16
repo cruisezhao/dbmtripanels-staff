@@ -169,8 +169,10 @@ LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
 
-#crudbuilder
+#tickets
 SITE_ID = 2
+
+#crudbuilder
 LOGIN_REQUIRED_FOR_CRUD = True
 PERMISSION_REQUIRED_FOR_CRUD = False
-PROJECT_NAME = 'admin'
+PROJECT_NAME = 'staff'
