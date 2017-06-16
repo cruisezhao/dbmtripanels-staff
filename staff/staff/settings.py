@@ -43,6 +43,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'common.apps.users',
+    #dependeny used for ticket
+    'django.contrib.sites',
+    #{#load humanlize#}
+    'django.contrib.humanize',
+
+    'common.apps.clients',
+    'common.apps.packages',
+    'common.apps.products',
+    'common.apps.orders',
+
+    'authtools',
+    'crispy_forms',
+    'django_tables2',
+    'crudbuilder',
+    #'staff',
+    'bootstrapform',
+    'helpdesk',
 ]
 
 MIDDLEWARE = [
@@ -151,3 +168,11 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
+
+#tickets
+SITE_ID = 2
+
+#crudbuilder
+LOGIN_REQUIRED_FOR_CRUD = True
+PERMISSION_REQUIRED_FOR_CRUD = False
+PROJECT_NAME = 'staff'

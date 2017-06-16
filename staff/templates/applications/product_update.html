@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crudbuilder %}
+{% load render_table from django_tables2 %}
+
+{% block styles %}
+{% endblock styles %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+	<li><a href="/crud/applications/softwares/">Softwares</a></li>
+	<li><a href="/crud/applications/products/?id={{ object.software.id }}">Products</a></li>
+    <li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-detail' object.id %}">Detail</a></li>
+	<li class="active">Update</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+	<h3>Update {{actual_model_name|title}}</h3>
+	<hr/>
+	{% include "crudbuilder/widgets/form.html" %}
+</div>
+{% endblock content %}

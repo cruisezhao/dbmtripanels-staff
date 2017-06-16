@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block styles %}
+
+
+
+{% endblock styles %}
+
+
+{% block content %}
+  <!--BreadNav-->
+  <ol class="breadcrumb">
+      <li><a href="{% url 'staff/home' %}">Home</a></li>
+      <li class="active">Orders</li>
+  </ol>
+  <!--AlertBar-->
+  <div id="up" class="alert-style-success" style="display:none;">
+    Order was successfully updated
+  </div>
+  <!--ProfileSetting-->
+  <div class="widget">
+    <div class="widget-header">
+      <h3>Orders</h3>
+    </div> <!-- /widget-header -->
+
+    <div class="widget-content">
+      <!--tabNav-->
+      <div class="tabbable">
+
+         <br />
+         <!--tabContent-->
+         <div class="tab-content">
+           <!-- /widget-tab-pane1 -->
+
+           {% block tab %}
+
+
+                <table class="table table-bordered" style="margin-top:20px;">
+
+                  <tr>
+                    <th>Name1</th>
+                    <th>Name2</th>
+                    <th>Name3</th>
+                    <th>Name4</th>
+                    <th>Name5</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Rules</th>
+                  </tr>
+
+
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{ order.get_cpu_cores }}</td>
+                        <td>{{ order.get_memory }}</td>
+                        <td>{{ order.get_disks}}</td>
+                        <td>{{ order.get_bandwidth }}</td>
+                        <td>{{ order.get_user_remarks }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.amount }}</td>
+                      </tr>
+
+
+                </table>
+
+
+           {% endblock tab %}
+
+        </div><!-- /widget-tabContent -->
+      </div><!-- /widget-tabbable -->
+    </div> <!-- /widget-content -->
+  </div><!-- /widget-->
+
+{% endblock content %}
+
+{% block scripts %}
+
+
+
+  <script>
+    $(document).ready(function() {
+
+
+      });
+
+
+          var thisactiv = $('#accountbar li:first-child a' );
+          $("#accountbar .link-submenu").css('display','block');
+          thisactiv.addClass('focus-active');
+
+
+  </script>
+{% endblock scripts %}
