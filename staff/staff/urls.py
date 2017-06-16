@@ -24,6 +24,7 @@ urlpatterns = [
     #url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
     url(r'^users/', include((user_urls, 'users'))),
+    url(r'^crud/',  include('crudbuilder.urls')),
     #orders
     url(r'^orders/', include(ordersurl, namespace="orders")),
 ]
