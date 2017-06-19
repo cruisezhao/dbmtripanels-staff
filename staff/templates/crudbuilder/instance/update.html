@@ -8,7 +8,7 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-	<li><a href="{% url 'staff/home' %}">Home</a></li>
+	<li><a href="{% url 'home' %}">Home</a></li>
 	<li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-list' %}">Softwares</a></li>
     <li><a href="{% url 'software_detail' object.id %}">Detail</a></li>
 	<li class="active">Update</li>
