@@ -14,15 +14,9 @@
 {% endblock styles %}
 
 {% block content %}
-  <!--BreadNav-->
-  <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li class="active">Ticket</li>
-  </ol>
-
   <!--ticket-content-->
   {% include "helpdesk/navigation.html" %}
-  
+
   <!--helpdesk-body-->
   {% block helpdesk_body %}
   {% endblock helpdesk_body %}
@@ -32,14 +26,6 @@
 {% block scripts %}
     {% block helpdesk_head %}{% endblock %}
 {% endblock scripts %}
-
-
-
-<!-- <div id='container' class="container">
-    <div id='header' class="row">
-
-    </div>
-  </div> -->
 
 
 
