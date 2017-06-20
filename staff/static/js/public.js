@@ -1,11 +1,11 @@
 $(document).ready(function(){   
     //go to index interface
     $('#head0 #logo').on('click',function(){
-    	window.location.href="http://portal.databasemart.net/";
+    	window.location.href="http://portal.tripanles.com/";
     });	
 	//GO TO all_products interface
 	$('#all_Products').on('click',function(){
-		window.location.href="http://portal.databasemart.net/all_products.html";
+		window.location.href="http://portal.tripanles.com/all_products.html";
 	});	
 	//hover email
 	$('#head0 #head1 #myName').hover(function(){
