@@ -34,6 +34,7 @@ input{outline: none;}
 	#topNav #topNav1 ul li a.onSelected{background: #ff7b22;color: rgba(255,255,255,1);}
 	#topNav #topNav1 ul li a{background: #32383f;height: 56px;line-height: 56px;font-size: 20px;color:rgba(255,255,255,0.8);padding: 0px 30px;display: block;transition: all 1s linear 0s;}
 	#topNav #topNav1 ul li a:hover{background: #ff7b22;color: rgba(255,255,255,1);}
+	
 }
 @media (min-width: 769px) and (max-width: 1023.9px) {
 	#head{height: 70px;width: 100%;background:linear-gradient(180deg,rgba(255,255,255,1),rgba(0,0,0,0.02));}
@@ -69,7 +70,3 @@ input{outline: none;}
 	#head0 #head1 #myName .Hover div a{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;text-decoration: none;margin-left: 0px;}
 	#head0 #head1 #myName .Hover div a:hover{color: #ff7b22;}
 }
-
-
-
-
