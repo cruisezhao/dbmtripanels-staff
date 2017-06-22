@@ -168,6 +168,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
+AUTH_USER_MODEL = 'users.Users'
 
 #tickets
 SITE_ID = 2
