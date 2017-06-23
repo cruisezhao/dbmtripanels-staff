@@ -10,7 +10,7 @@ $(document).ready(function(){
 	//hover email
   var $nameLength = $('#head0 #head1 #myName').width();
   if($nameLength < 110){
-    $(this).find('.Hover').width(110);
+    $(this).find('.Hover').width(130);
   };
 	$('#head0 #head1 #myName').hover(function(){
 		$(this).find('.Hover').stop().slideDown(300);

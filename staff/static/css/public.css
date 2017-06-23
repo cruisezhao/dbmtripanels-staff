@@ -26,7 +26,7 @@ input{outline: none;}
 	#head0 #head1 #all_Products:hover{color: #ff7b22;}
 	#head0 #head1 #myName{position: relative;margin-top: 25px;}
 	#head0 #head1 #myName #myName0{font-size: 20px;line-height:24px;padding: 1px 0px 5px 10px;height: 24px;}
-	#head0 #head1 #myName .Hover{width: 100%;display: none;z-index: 99;border-top:solid 4px #ff7b22;position: absolute;top: 30px;left: 0px;background:rgba(255,255,255,1);padding-top: 10px;padding-bottom: 10px;}
+	#head0 #head1 #myName .Hover{width: 100%;display: none;z-index: 99;border-top:solid 4px #ff7b22;position: absolute;top: 45px;right: 0;background:rgba(255,255,255,1);padding-top: 10px;padding-bottom: 10px;}
 	#head0 #head1 #myName .Hover > div{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;}
 	#head0 #head1 #myName .Hover div:hover{color: #ff7b22;}
 	#head0 #head1 #myName .Hover div a{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;text-decoration: none;margin-left: 0px;}
