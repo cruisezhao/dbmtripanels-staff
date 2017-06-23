@@ -170,6 +170,8 @@ LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
 AUTH_USER_MODEL = 'users.Users'
 
+SESSION_COOKIE_DOMAIN = '.tripanels.com'
+
 #tickets
 SITE_ID = 2
 
