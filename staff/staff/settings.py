@@ -171,7 +171,12 @@ LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
 AUTH_USER_MODEL = 'users.Users'
 
-SESSION_COOKIE_DOMAIN = '.tripanels.com'
+if hostname == 'cluster':
+    SESSION_COOKIE_DOMAIN = '.tripanels.com'
+else:
+    SESSION_COOKIE_DOMAIN = None
+
+AUTHENTICATION_BACKENDS = ['common.apps.users.backends.AllowStaffGroupUsersModelBackend']
 
 #tickets
 SITE_ID = 2
