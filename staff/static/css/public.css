@@ -20,7 +20,7 @@ input{outline: none;}
 	#head #head0{margin: 0px auto;width:90%;font-size: 0px;}
 	#head0 div{display: inline-block;vertical-align: top;cursor: pointer;}
 	#head0 #logo{height: 70px;width:218px;}
-	#head0 #logo img{width:100%;height: 100%;}
+	#head0 #logo img{height: 100%;}
 	#head0 #head1{float: right;}
 	#head0 #head1 #all_Products{cursor: pointer;margin-top: 25px;font-size: 20px;padding: 1px 10px 0px 10px;border-right: solid 2px #444444;height: 24px;line-height:24px;}
 	#head0 #head1 #all_Products:hover{color: #ff7b22;}
