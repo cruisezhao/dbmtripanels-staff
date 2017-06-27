@@ -8,8 +8,8 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{% url 'staff/home' %}">Home</a></li>
-    <li class="active">Softwares</li>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li class="active">{{ breadcrumb_name }}</li>
 </ul>
 {% endblock %}
 
@@ -25,17 +25,17 @@
   	<form class="navbar-form navbar-left" role="form" action="." method="GET">
         {% include "crudbuilder/widgets/search_widgets.html" %}
     </form>
-    {% if extra_button %}
+        {% if extra_button %}
   </div>
 </div>
-<!--Upload-->
+  <!--Upload-->
   {% if extra_button %}
     <div class="widget widget-table">
-  <div class="widget-header">
-    <i class="fa fa-upload"></i>
-    <h3>Upload Product</h3>
-  </div>
-  <div class="widget-content">
+      <div class="widget-header">
+        <i class="fa fa-upload"></i>
+        <h3>Upload Product</h3>
+      </div>
+      <div class="widget-content">
         <form  id="sofUpLoad" enctype="multipart/form-data"  class="navbar-form navbar-left" role="form" action="{% url 'upload_file' %}" method="post">
             {% csrf_token %}
 
@@ -48,43 +48,22 @@
             <input type="file"  name="software" id="upLoadSof" style="padding:6px 12px; margin-left:45%" />
             <a href="javascript:;" class="btn-sof" ><input type="submit" /><i class="fa fa-arrow-up"></i>Submit</a>
         </form>
-
-  </div>
-</div>
+      </div>
+    </div>
   {% endif %}
-<!--List-->
-<div class="widget widget-table">
-  <div class="widget-header">
-        <i class=" fa fa-list"></i>
-        <h3>List</h3>
-    </div> <!-- /widget-header -->
-  <div class="widget-content">
-    {% render_table table_objects "crudbuilder/widgets/tables/tables.html" %}
+  <!--List-->
+  <div class="widget widget-table">
+    <div class="widget-header">
+          <i class=" fa fa-list"></i>
+          <h3>List</h3>
+    </div>
+    <div class="widget-content">
+      {% render_table table_objects "crudbuilder/widgets/tables/tables.html" %}
+    </div>
   </div>
-</div>
+
 {% endblock content %}
 
 
 {% block scripts %}
-
-<script>
-  $(document).ready(function(){
-    var pageurl = window.location.pathname;
-    var thisactivfirst = $('#appbar li:first-child a' ).attr("href");
-    var thisactivlast = $('#appbar li:last-child a' ).attr("href");
-    var thisactivfirstA = $('#appbar li:first-child a' );
-    var thisactivlastA = $('#appbar li:last-child a' );
-
-    $(".link-submenu").css('display','block');
-    if(pageurl === thisactivfirst){
-
-      thisactivfirstA.addClass('focus-active');
-    }
-    else{
-      thisactivlastA.addClass('focus-active');
-    }
-
-    var f = $('#upLoadSof');
-  });
-</script>
 {% endblock scripts %}

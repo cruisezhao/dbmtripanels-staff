@@ -11,18 +11,22 @@ input{outline: none;}
 :-ms-input-placeholder{color: #999999;}
 :-moz-placeholder{color: #999999;}
 ::-moz-placeholder{color: #999999;}
+#sofUpLoad{width:100%;}
+.showFileName{display: inline-block;padding: 4px 12px;overflow: hidden;text-decoration: none;text-indent: 0px;color: #000000;}
+.warning-txt{padding: 15px 10px 15px 10px;font-size: 16px;text-align: center;margin-bottom: 6px !important;text-transform: capitalize;font-weight: 600;}
+.btn-sof{position:relative;display:inline-block;background:#2dab4c;border:1px solid #2dab4c;border-radius:4px;padding:4px 12px;overflow:hidden;color:#fff;text-decoration:none;text-indent:0}.btn-sof input{position:absolute;font-size:100px;right:0;top:0;opacity:0}.btn-sof i{margin-right:4px}.btn-sof:hover{background:#279743;color:#fff}
 @media only screen and (min-width:1024px) {
 	#head{height: 70px;width: 100%;background:linear-gradient(180deg,rgba(255,255,255,1),rgba(0,0,0,0.02));}
 	#head #head0{margin: 0px auto;width:90%;font-size: 0px;}
 	#head0 div{display: inline-block;vertical-align: top;cursor: pointer;}
 	#head0 #logo{height: 70px;width:218px;}
-	#head0 #logo img{width:100%;height: 100%;}
+	#head0 #logo img{height: 100%;}
 	#head0 #head1{float: right;}
 	#head0 #head1 #all_Products{cursor: pointer;margin-top: 25px;font-size: 20px;padding: 1px 10px 0px 10px;border-right: solid 2px #444444;height: 24px;line-height:24px;}
 	#head0 #head1 #all_Products:hover{color: #ff7b22;}
 	#head0 #head1 #myName{position: relative;margin-top: 25px;}
 	#head0 #head1 #myName #myName0{font-size: 20px;line-height:24px;padding: 1px 0px 5px 10px;height: 24px;}
-	#head0 #head1 #myName .Hover{width: 100%;display: none;z-index: 99;border-top:solid 4px #ff7b22;position: absolute;top: 30px;left: 0px;background:rgba(255,255,255,1);padding-top: 10px;padding-bottom: 10px;}
+	#head0 #head1 #myName .Hover{width: 100%;display: none;z-index: 99;border-top:solid 4px #ff7b22;position: absolute;top: 45px;right: 0;background:rgba(255,255,255,1);padding-top: 10px;padding-bottom: 10px;}
 	#head0 #head1 #myName .Hover > div{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;}
 	#head0 #head1 #myName .Hover div:hover{color: #ff7b22;}
 	#head0 #head1 #myName .Hover div a{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;text-decoration: none;margin-left: 0px;}
@@ -33,7 +37,7 @@ input{outline: none;}
 	#topNav #topNav1 ul li{display: inline-block;vertical-align: top;height: 56px;}
 	#topNav #topNav1 ul li a.onSelected{background: #ff7b22;color: rgba(255,255,255,1);}
 	#topNav #topNav1 ul li a{background: #32383f;height: 56px;line-height: 56px;font-size: 20px;color:rgba(255,255,255,0.8);padding: 0px 30px;display: block;transition: all 1s linear 0s;}
-	#topNav #topNav1 ul li a:hover{background: #ff7b22;color: rgba(255,255,255,1);}
+	#topNav #topNav1 ul li a:hover{background: #ff7b22;color: rgba(255,255,255,1);text-decoration: none;}
 }
 @media (min-width: 769px) and (max-width: 1023.9px) {
 	#head{height: 70px;width: 100%;background:linear-gradient(180deg,rgba(255,255,255,1),rgba(0,0,0,0.02));}
@@ -69,7 +73,3 @@ input{outline: none;}
 	#head0 #head1 #myName .Hover div a{line-height: 30px;color: #222222;font-size: 16px;display: block;margin-left: 10px;margin-right: 10px;text-decoration: none;margin-left: 0px;}
 	#head0 #head1 #myName .Hover div a:hover{color: #ff7b22;}
 }
-
-
-
-

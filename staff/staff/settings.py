@@ -25,7 +25,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3@+wn)qdzs3i@u#rc9@jlw__n7u@3y)c#2x#$%9fhln3-70s@s'
+#SECRET_KEY = '3@+wn)qdzs3i@u#rc9@jlw__n7u@3y)c#2x#$%9fhln3-70s@s'
+SECRET_KEY = 'f5l(t&w_k34o%zg!od8h+3f11by!v_)l*jydv#(t986mi27swu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -168,6 +169,14 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('users:login')
 LOGIN_URL = reverse_lazy('users:login')
+AUTH_USER_MODEL = 'users.Users'
+
+if hostname == 'cluster':
+    SESSION_COOKIE_DOMAIN = '.tripanels.com'
+else:
+    SESSION_COOKIE_DOMAIN = None
+
+AUTHENTICATION_BACKENDS = ['common.apps.users.backends.AllowStaffGroupUsersModelBackend']
 
 #tickets
 SITE_ID = 2

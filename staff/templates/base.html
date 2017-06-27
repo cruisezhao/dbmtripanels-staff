@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Client Console</title>
+    <title>Staff</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}" />
     <link rel="stylesheet" href="{% static 'css/adminia.css' %}"/>
@@ -21,7 +21,7 @@
         <div id="head">
 					<div id="head0">
 						<div id="logo">
-							<img src="{% static 'img/SCLogo.png' %}" / >
+							<img src="{% static 'img/logo-20.png' %}" / >
 						</div>
 						<div id="head1">
 							<div id="all_Products">
@@ -29,7 +29,7 @@
 							</div>
 							<div id="myName">
 								<div id="myName0">
-									{% if user.first_name is not None and user.last_name is not None %} {{user.first_name}} {{user.last_name}}{% else %}{{user.email}}{% endif %}
+								    {{user.username}}
 								</div>
 								<div class="Hover">
 									<div class="open">
@@ -38,6 +38,9 @@
 									<div class="livechat">
 										LiveChat
 									</div>
+                  <div class="admin">
+                    <a href="http://admin.tripanels.com">Admin Panel</a>
+                  </div>
 									<div class="logout">
 										<a href="{% url 'users:logout' %}">Log out</a>
 									</div>
@@ -52,14 +55,17 @@
     <div id="topNav">
     	  <div id="topNav1">
         	  	<ul>
-        	  	  <li>
+                  <li>
+                      <a href="{% url 'home' %}">Home</a>
+                  </li>
+        	  	    <li>
                     <a href="/crud/clients/clientses/">Clients</a>
                   </li>
-                  
+
                   <li>
                     <a href="{% url 'helpdesk_home' %}">Ticket</a>
                   </li>
-                  
+
                   {% comment %}
                   <li>
                       <a href="/crud/applications/softwares/"><i class="fa fa-cube"></i>Softwares</a>
@@ -68,41 +74,26 @@
                   <li>
                     <a href="{% url 'orders:list' %}">Orders</a>
                   </li>
-                  
+
                   <li>
                     <a href="/crud/packages/packageses/">Products</a>
                   </li>
-                  
+
         	  	</ul>
     	  </div>
     </div>
     {% endblock leftSiderbar %}
 
     <div class="content-body">
-
-
-
-
-
-      {% block rightcontent %}
-      <!--right-Content-->
-      <div id="loadhtml"  class="right-siderbar">
-      {% block content %}
-
-      {% endblock content %}
-
-          <div class="upup"></div>
-      </div>
-      {% endblock rightcontent %}
-
+          {% block breadcrumb %}{% endblock %}
+          {% block content %}{% endblock content %}
+          <!-- <div class="upup"></div> -->
     </div>
-  </body>
+
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/public.js' %}"></script>
-  {% block extra_scripts %}
-  {% endblock extra_scripts %}
-
   {% block scripts %}
   {% endblock scripts %}
+  </body>
 </html>

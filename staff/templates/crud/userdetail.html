@@ -9,7 +9,7 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{% url 'staff/home' %}">Home</a></li>
+    <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-list' %}">Account</a></li>
     <li class="active">Profile</li>
 </ul>
@@ -25,7 +25,7 @@
 
 <div class='container'>
     <div class="widget-header">
-        <p style="line-height:40px;font-weight:bold;margin-left:15px;font-size:18px;">Profile of  {{object.first_name}} {{object.last_name}} ( Client ID: {{object.id}} )</p>
+        <p style="line-height:40px;font-weight:bold;margin-left:15px;font-size:18px;">Profile of  {{object.first_name}} {{object.last_name}} ( Client UUID: {{object.uuid}} )</p>
     </div>
 
 
@@ -61,37 +61,7 @@
 
     <hr/>
 
-    <!--<h3>{{inlineformset.fk.related_query_name|title}}</h3>-->
-    <div class="widget-header">
-        <p style="line-height:40px;font-weight:bold;margin-left:15px;font-size:18px;">OpenStack User</p>
-    </div>
-
-
-    <table class="table table-bordered" style='background: white;' >
-        <thead>
-            <tr>
-                {% for field in inlineformset.form.base_fields.keys %}
-                    {% if inlineformset.fk.name != field %}
-                    <th>{{field|undertospaced}}</th>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for object in object|inline_objects:inlineformset.fk %}
-                <tr>
-                {% for field in inlineformset.form.base_fields.keys %}
-                    {% if inlineformset.fk.name != field %}
-                    <td>{{object|get_value:field}}</td>
-                    {% endif %}
-                {% endfor %}
-                <tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
 
 </div>
-<br/>
-<hr/>
+
 {% endblock content %}
