@@ -6,14 +6,16 @@
 {% block styles %}
 {% endblock styles %}
 
+{% comment %}
 {% block breadcrumb %}
-<ul class="breadcrumb">
-	<li><a href="{% url 'home' %}">Home</a></li>
-	<li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-list' %}">Account</a></li>
-    <li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-detail' object.id %}">Profile</a></li>
-	<li class="active">Update Profile</li>
-</ul>
-{% endblock %}
+<!--<ul class="breadcrumb">-->
+	<!--<li><a href="{% url 'home' %}">Home</a></li>-->
+	<!--<li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-list' %}">Account</a></li>-->
+    <!--<li><a href="{% url app_label|add:'-'|add:custom_postfix_url|add:'-detail' object.uuid %}">Profile</a></li>-->
+	<!--<li class="active">Update Profile</li>-->
+<!--</ul>-->
+<!--{% endblock %}-->
+{% endcomment %}
 
 {% block content %}
 <div class='container'>
