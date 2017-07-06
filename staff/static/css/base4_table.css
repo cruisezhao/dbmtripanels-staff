@@ -1,0 +1,29 @@
+@media(max-width:768px) {
+	.Tspan2{width:100% !important;}
+	#content_wrapper{width: 100% !important;}
+	#content_wrapper p{padding-left: 10px;}
+}
+@media(min-width: 768.01px) {
+	#content_wrapper{padding: 0px 20px;box-sizing: border-box;}
+}
+#content_wrapper{margin-left: 0px !important;margin-right: 0px !important;height: 800px;}
+#content_wrapper p{line-height: 40px;color: #222222;font-size: 16px;font-weight: normal !important;}
+table{width: 100%;text-align: center;background: #ffffff;border: solid 1px #dddddd;font-size: 14px;}
+table th{background: #FFAA00;color: #ffffff;height: 40px;font-weight: normal;}
+table tr{border-bottom: solid 1px #dddddd;line-height: 24px;height: 24px;}
+table tr td{padding:5px 5px;}
+table tr td a{color: #0cc285;}
+table tr td a:hover{text-decoration:under-line;color:#0cc285;}
+.pageControl ol li a i.lastPage{display: block;position: absolute;width:9px;height: 9px;border-top:solid 2px #7c7c7c;border-right: solid 2px #7c7c7c;transform: rotate(225deg);top: 12px;left: 15px;}
+.pageControl ol li a i.nextPage{display: block;position: absolute;width:9px;height: 9px;border-top:solid 2px #7c7c7c;border-right: solid 2px #7c7c7c;transform: rotate(45deg);top: 12px;left: 10px;}
+.pageControl ol li a{height: 34px;display: block;font-size: 14px;color: #444444;line-height: 34px;position: relative;list-style: none;}
+.pageControl ol li a:hover{list-style: none;}
+.pageControl ol li span{line-height: 28px;}
+.pageControl ol li{display: inline-block;vertical-align: top;background: #ffffff;border: solid 1px #dddddd;width: 34px;height: 34px;text-align: center;cursor: pointer;}
+.pageControl ol li.active{background: #FFAA00;border: solid 1px #FFAA00;}
+.pageControl ol li.active a{color: #ffffff;}
+.pageControl ol li:hover{background: #FFAA00;border: solid 1px #FFAA00;}
+.pageControl ol li:hover a{color: #ffffff;}
+.pageControl ol li:hover a i.lastPage{border-top:solid 2px #ffffff;border-right: solid 2px #ffffff;}
+.pageControl ol li:hover a i.nextPage{border-top:solid 2px #ffffff;border-right: solid 2px #ffffff;}
+.pageControl ol li:hover span{color: #ffffff;}
