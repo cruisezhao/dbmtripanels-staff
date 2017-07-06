@@ -5,60 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Staff</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/adminia.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/clientPage.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/sidberbar-style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/public.css' %}" />
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base1_head.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base2_left.css' %}"/>
+
     {% block styles %}
     {% endblock styles %}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
   </head>
 
   <body>
-    <header>
-        {% block header %}
-        <div id="head">
-					<div id="head0">
-						<div id="logo">
-							<img src="{% static 'img/logo-20.png' %}" / >
-						</div>
-						<div id="head1">
-							<div id="all_Products">
-								All Products
-							</div>
-							<div id="myName">
-								<div id="myName0">
-								    {{user.username}}
-								</div>
-								<div class="Hover">
-									<div class="open">
-										Open Ticket
-									</div>
-									<div class="livechat">
-										LiveChat
-									</div>
-                  <div class="admin">
-                    <a href="http://admin.tripanels.com">Admin Panel</a>
-                  </div>
-									<div class="logout">
-										<a href="{% url 'users:logout' %}">Log out</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</div>
-        {% endblock header %}
-    </header>
-    {% block leftSiderbar %}
-    <div id="topNav">
-    	  <div id="topNav1">
-        	  	<ul>
+    {% block header %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">
+            <img src="{% static 'img/logo.png' %}"/>
+          </a>
+          <div class="nav-collapse collapse">
+            <div class="Tpull-down">
+              <div class="Tdown"></div>
+            </div>
+            <div class="Thover">
+              <div class="Thover-line" id="staff">Staff Panel</div>
+              <div class="Thover-line">Open Ticket</div>
+              <div class="Thover-line" id="logout">Log out</div>
+              <div class="Ttriangle"></div>
+            </div>
+            <p class="navbar-text pull-right">
+              <a href="#" class="navbar-link">{{user.username}}</a>
+            </p>
+            {% block leftSiderbar %}
+            <ul class="nav Tnav">
                   <li>
                       <a href="{% url 'home' %}">Home</a>
                   </li>
-        	  	    <li>
+                  <li>
                     <a href="/crud/clients/clients/">Clients</a>
                   </li>
 
@@ -76,24 +67,37 @@
                   </li>
 
                   <li>
-                    <a href="/crud/packages/packageses/">Products</a>
+                    <a href="{% url 'packages:list' %}">Products</a>
                   </li>
-
-        	  	</ul>
-    	  </div>
+            </ul>
+            {% endblock leftSiderbar %}
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
     </div>
-    {% endblock leftSiderbar %}
-
-    <div class="content-body">
+    {% endblock header %}
+    <div class="container-fluid">
           {% block breadcrumb %}{% endblock %}
           {% block content %}{% endblock content %}
           <!-- <div class="upup"></div> -->
-    </div>
 
-  <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </div>
+  </body>
+
+  <script src="{% static 'js/bootstrap-transition.js' %}"></script>
+  <script src="{% static 'js/bootstrap-alert.js' %}"></script>
+  <script src="{% static 'js/bootstrap-modal.js' %}"></script>
+  <script src="{% static 'js/bootstrap-dropdown.js' %}"></script>
+  <script src="{% static 'js/bootstrap-scrollspy.js' %}"></script>
+  <script src="{% static 'js/bootstrap-tab.js' %}"></script>
+  <script src="{% static 'js/bootstrap-tooltip.js' %}"></script>
+  <script src="{% static 'js/bootstrap-popover.js' %}"></script>
+  <script src="{% static 'js/bootstrap-button.js' %}"></script>
+  <script src="{% static 'js/bootstrap-collapse.js' %}"></script>
+  <script src="{% static 'js/bootstrap-carousel.js' %}"></script>
+  <script src="{% static 'js/bootstrap-typeahead.js' %}"></script>
+  <script src="{% static 'js/base1_head.js' %}"></script>
   <script src="{% static 'js/public.js' %}"></script>
   {% block scripts %}
   {% endblock scripts %}
-  </body>
 </html>

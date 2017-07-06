@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     #{#load humanlize#}
     'django.contrib.humanize',
-
+    'common.apps.utiltemplate',
     'common.apps.clients',
     'common.apps.packages',
     'common.apps.products',
@@ -185,3 +185,5 @@ SITE_ID = 2
 LOGIN_REQUIRED_FOR_CRUD = True
 PERMISSION_REQUIRED_FOR_CRUD = False
 PROJECT_NAME = 'staff'
+
+PAGINATE_COUNT = 2
