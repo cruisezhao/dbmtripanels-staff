@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     #{#load humanlize#}
     'django.contrib.humanize',
-
+    'common.apps.utiltemplate',
     'common.apps.clients',
     'common.apps.packages',
     'common.apps.products',
