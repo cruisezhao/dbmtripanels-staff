@@ -1,0 +1,22 @@
+.Tspan2{margin: 0px !important;}
+.Tspan2 form>ul >li{padding:0px 20px 0px 20px;position: relative;color: rgba(255,255,255,0.8);}
+.Tspan2 form>ul >li:first-child{border-bottom: dashed 1px rgba(255,255,255,0.3);}
+.Tspan2 form>ul >li:nth-child(2){border-bottom: dashed 1px rgba(255,255,255,0.3);}
+.Tspan2 form>ul >li:last-child{border-bottom: dashed 1px rgba(255,255,255,0.3);}
+.Tspan2 form>ul >li>label{padding-top: 10px;font-size: 16px;color: #e5e5be;}
+.Tred{position: absolute;right: 10px;top: 10px;height: 20px;width: 40px;color: #ffffff;background: #ff3c00;font-size: 14px;line-height: 20px;text-align: center;border-radius: 2px;}
+.Tspan2 form>ul >li>ul >li>label{line-height: 26px;width: 250px;margin: 5px 0px;text-transform: capitalize;}
+.Tspan2 form>ul >li>ul >li>label>input{width: 24px;height: 24px;border: none;background: none;margin-right: 10px;}
+.Tspan2 form>ul >li>ul >li>label>span{font-weight: normal;font-size: 14px;color: rgba(255,255,255,0.5);line-height: 24px;text-align: right;width: 40px;background: none;}
+.Tspan2 ul li div{display: inline-block;vertical-align: top;}
+.Tcheckbox{border: solid 1px rgba(255,255,255,0.8);height: 20px;width: 20px;box-sizing: border-box;cursor: pointer;}
+.Tcheckbox1{background: url(../img/tick-67.png) no-repeat;background-size: contain;}
+.Ttext{font-size: 14px;color: rgba(255,255,255,0.8);line-height: 20px;width: 165px;margin-left: 5px;}
+.Tnumber{font-size: 14px;color: rgba(255,255,255,0.4);line-height: 20px;text-align: right;width: 30px;}
+.TinputText:last-child{margin-top: 10px;}
+.TinputText a{margin-left:20px;padding-top: 10px;display: none;}
+.TinputText input{border: solid 1.5px rgba(255,255,255,0.8);height: 25px;background: none;border-radius: 0px;width: 214.09px;color: rgba(255,255,255,1);}
+.TinputText input[type=submit]{height: 35px;color: #ffffff;background: #ffaa00;line-height: 35px;text-align: center;border: none;width: 229.09px;margin-left:20px;}
+.Tnav>li>a{transition: all 1s linear !important;}
+.Tnav>li>a:hover{background: #0cc285 !important;}
+
