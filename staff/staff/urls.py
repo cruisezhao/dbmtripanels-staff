@@ -21,6 +21,7 @@ from . import views
 from common.apps.orders import urls_staff as ordersurl
 from common.apps.clients import url_staff as clientsurl
 from common.apps.packages import urls_staff as packageurl
+from common.apps.deployments import urls_staff as deployurl
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
@@ -33,4 +34,5 @@ urlpatterns = [
     #ticket
     url(r'^ticket/',include('helpdesk.urls')),
     url(r'clients/', include(clientsurl, namespace="clients"))
+    url(r'^deployments/', include(deployurl, namespace="deployments")),
 ]
