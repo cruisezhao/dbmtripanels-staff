@@ -29,6 +29,15 @@ $(document).ready(function(){
 			});
 		};
 	});
+	//select button
+    $('#toggle_all').click(function() {
+        $('td input:checkbox[name=pk]').prop('checked', $(this).prop('checked'));
+        if ($(this).is(':checked')) {
+            $('#select_all_box').removeClass('hidden');
+        } else {
+            $('#select_all').prop('checked', false);
+        }
+    });
 	
 });	
 
