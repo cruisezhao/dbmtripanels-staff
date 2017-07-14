@@ -33,6 +33,6 @@ urlpatterns = [
     url(r'^packages/', include(packageurl, namespace="packages")),
     #ticket
     url(r'^ticket/',include('helpdesk.urls')),
-    url(r'clients/', include(clientsurl, namespace="clients"))
+    url(r'clients/', include(clientsurl, namespace="clients")),
     url(r'^deployments/', include(deployurl, namespace="deployments")),
 ]
