@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'common.apps.packages',
     'common.apps.products',
     'common.apps.orders',
+    'common.apps.deployments',
 
     'authtools',
     'crispy_forms',
