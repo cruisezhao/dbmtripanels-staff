@@ -42,7 +42,7 @@
 	padding: 12px 20px;
 	margin-bottom: 1em;
 
-	background: #85d9ff;
+	background: #FFAA00;
 	background:-moz-linear-gradient(top, #85d9ff 0%, #6bcffc 100%);
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#85d9ff), color-stop(100%,#6bcffc));
 	background:-webkit-linear-gradient(top, #85d9ff 0%,#6bcffc 100%);
