@@ -1,17 +1,33 @@
-.Tadd{position: fixed;right: -260px;top:100px;z-index:98;}
-.Tadd .Tplus{cursor: pointer;width: 50px;height: 50px;background: #0cc285;position: absolute;left: -50px;top: 10px;}
-.Tadd .Tplus .Tplus1{transition: all 0.3s linear;width: 50px;height: 50px;line-height: 50px;font-size: 40px;color: #ffffff;text-align: center;}
-.Tadd .Tplus .Tplus1:hover{transform: rotate(90deg);}
-.Tadd .TplusContent{box-shadow: 0px 0px 8px 0px #999999;background: #ffffff;width: 260px;padding-bottom: 10px;}
-.TplusContent h3{line-height: 50px;font-size: 20px;font-weight: normal;text-align: center;margin: 0px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;}
-.TplusContent >div{padding: 0px 20px;}
-.TplusContent .Tselect .Tupload{cursor: pointer;text-indent: 20px;background: url(../img/upload.png) 40px 0px no-repeat;background-size: contain;height: 36px;border: solid 1px #FFAA00;width: 100%;text-align: center;line-height: 36px;font-size: 16px;color: #FFAA00;}
-.TplusContent .Tfile{margin:10px 0px;}
-.TplusContent .Tfile div{display: inline-block;vertical-align: top;line-height: 30px;}
-.TplusContent .Tfile .Tzip{width: 180px;}
-.TplusContent .Tfile .Tclear{color: #FFAA00;cursor: pointer;}
-.TplusContent .Ttype div{display: inline-block;vertical-align: top;}
-.TplusContent .Ttype .Ttype1{width: 40px;line-height: 30px;margin-right: 10px;height: 30px;}
-.TplusContent .Ttype .Ttype2 input{border-radius: 0px;outline: none !important;height: 20px;line-height: 20px;width: 152px;}
-.TplusContent .button{border-top: solid 1px #dddddd;}
-.TplusContent .button .create{cursor: pointer;width:220px;height: 36px;text-align: center;line-height: 36px;font-size: 16px;color: #ffffff;background: #ff3c00;margin:10px auto 0px auto;}
+@media only screen and (min-width:768px){
+	.form_module{margin: 0px auto;width: 768px;}
+	.form_module h3{font-size: 24px;}
+	.createProduct{}
+	.createProduct1{margin-bottom: 20px;width: 100%;background: #ffffff;padding-bottom: 20px;border: solid 1px #dddddd;}
+	.btn{border:none;line-height: 30px;}
+	.form-group{width: 370px;display: inline-block;vertical-align: top;}
+	.createProduct1 h4{background: #f5f5f5;font-size: 16px;font-weight:100;line-height: 40px;color: #444444;text-align: center;margin-bottom: 40px;}
+	.control-label{display: inline-block;vertical-align: top;line-height: 30px;width:100px;white-space: nowrap;text-align: right;margin-right: 10px;}
+	.col-md-9{display: inline-block;vertical-align: top;width: 220px;}
+	select,input,button{border-radius: 0px !important;}
+	select option{height: 24px;padding-top: 4px;}	
+	.Button button.btn{background: #FFaa00 !important;border: none;color: #ffffff;}
+	.Button {margin:30px 20px 0px 20px;text-align: center;}
+	.Button a.btn{border: solid 1px #999999;color: #444444;box-sizing: border-box !important;display: inline-block;background: #ffffff;}
+}
+
+@media only screen and (max-width:768px) {
+	.form_module{width:100%;}
+	.form_module h3{font-size: 24px;padding-left: 20px;}
+	.createProduct{width: 100%;}
+	.createProduct1{margin-bottom: 20px;width: 100%;background: #ffffff;padding-bottom: 20px;border: solid 1px #dddddd;}
+	.btn{border:none;line-height: 30px;}
+	.form-group{width: 100%;}
+	.createProduct1 h4{background: #f5f5f5;font-size: 16px;font-weight:100;line-height: 40px;color: #444444;padding-left: 20px;margin-bottom: 40px;}
+	.control-label{display: inline-block;vertical-align: top;line-height: 30px;width:100px;white-space: nowrap;text-align: right;margin-right: 10px;}
+	.col-md-9{display: inline-block;vertical-align: top;width: 220px;}
+	select,input,button{border-radius: 0px !important;}
+	select option{height: 24px;padding-top: 4px;}	
+	.Button button.btn{background: #FFaa00 !important;border: none;color: #ffffff;}
+	.Button {margin:30px 20px 0px 20px;text-align: center;}
+	.Button a.btn{border: solid 1px #999999 !important;color: #444444;box-sizing: border-box;display: inline-block;background: #ffffff !important;height: 28px;}
+}
