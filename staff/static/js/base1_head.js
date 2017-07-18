@@ -23,10 +23,7 @@ $(document).ready(function(){
 	
 	$('.Tnav a').each(function(index,itself){
 		if(window.location.pathname.indexOf($(this).text())>0){
-			$(this).css({
-				'background-color':"#0cc285",
-				'color':"#ffffff"
-			});
+			$(this).addClass('selected');
 		};
 	});
 	//select button
