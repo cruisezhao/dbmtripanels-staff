@@ -24,7 +24,7 @@
                             {% if column.name == "plan" %}
                                 <td {{ column.attrs.td.as_html }}>
                                     {% for c in cell %}
-                                        {% if c.id %}<a href="/plan/detail/{{ c.id }}">{% endif %}{{ c }}</a></br>
+                                        {% if c.id %}<a href="/plan/detail/{{c.id }}">{% endif %}{{ c }}</a></br>
                                     {% endfor %}
                                 </td>
                             {% else %}

@@ -1,0 +1,23 @@
+.navbar-inverse .navbar-inner {
+    background: linear-gradient(90deg,#003973,#d6d89c);
+}
+.well {    
+    background: linear-gradient(180deg,#003973,#d6d89c);
+}
+.Tnav > li > a:hover {
+    background: #499bc4 !important;
+}
+.Tnav a.selected{background: #499bc4;color: #ffffff;}
+table tr td a {
+    color: #499bc4;
+}
+table tr td a:hover {
+    text-decoration: under-line;
+    color: #499bc4;
+}
+body{background: #f8feff;}
+.navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active, .navbar-inverse .btn-navbar.disabled, .navbar-inverse .btn-navbar[disabled] {
+    color: #ffffff;
+    background-color: #499bc4;
+    outline: rgba(255,255,255,0.8);
+}

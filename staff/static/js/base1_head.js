@@ -23,12 +23,18 @@ $(document).ready(function(){
 	
 	$('.Tnav a').each(function(index,itself){
 		if(window.location.pathname.indexOf($(this).text())>0){
-			$(this).css({
-				'background-color':"#0cc285",
-				'color':"#ffffff"
-			});
+			$(this).addClass('selected');
 		};
 	});
+	//select button
+    $('#toggle_all').click(function() {
+        $('td input:checkbox[name=pk]').prop('checked', $(this).prop('checked'));
+        if ($(this).is(':checked')) {
+            $('#select_all_box').removeClass('hidden');
+        } else {
+            $('#select_all').prop('checked', false);
+        }
+    });
 	
 });	
 
