@@ -22,6 +22,7 @@ from common.apps.orders import urls_staff as ordersurl
 from common.apps.clients import url_staff as clientsurl
 from common.apps.packages import urls_staff as packageurl
 from common.apps.deployments import urls_staff as deployurl
+from common.apps.infrastructure import urls4staff
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
@@ -35,4 +36,7 @@ urlpatterns = [
     url(r'^ticket/',include('helpdesk.urls')),
     url(r'clients/', include(clientsurl, namespace="clients")),
     url(r'^deployments/', include(deployurl, namespace="deployments")),
+
+    #infra
+    url(r'^infras/', include(urls4staff, namespace='infras')),
 ]
