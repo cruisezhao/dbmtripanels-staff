@@ -12,7 +12,7 @@
 	.form-group textarea{;width: 646px;margin-left: 58px;border-radius: 0px;}
 	
 	.control-label{display: inline-block;vertical-align: top;line-height: 30px;width:100px;white-space: nowrap;text-align: right;margin-right: 10px;}
-	.col-md-9{display: inline-block;vertical-align: top;width: 220px;}
+	.form-group>div{display: inline-block;vertical-align: top;width: 220px;}
 	select,input,button{border-radius: 0px !important;}
 	select option{height: 24px;padding-top: 4px;}	
 	.Button button.btn{background: #FFaa00 !important;border: none;color: #ffffff;}
@@ -34,7 +34,7 @@
 	.form-group textarea{width: 80%;margin-left:10%;border-radius: 0px;}
 	
 	.control-label{display: inline-block;vertical-align: top;line-height: 30px;width:100px;white-space: nowrap;text-align: right;margin-right: 10px;}
-	.col-md-9{display: inline-block;vertical-align: top;width: 220px;}
+	.form-group>div{display: inline-block;vertical-align: top;width: 220px;}
 	select,input,button{border-radius: 0px !important;}
 	select option{height: 24px;padding-top: 4px;}	
 	.Button button.btn{background: #FFaa00 !important;border: none;color: #ffffff;}
