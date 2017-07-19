@@ -18,6 +18,7 @@ table tr td a{color: #0cc285;}
 table tr td a:hover{text-decoration:under-line;color:#0cc285;}
 .table-bordered{border-radius: 0px;}
 .table th{line-height: 40px;padding: 0px 8px;}
+.pageControl{text-align: right;height: 36px;}
 .pageControl ol li a i.lastPage{display: block;position: absolute;width:9px;height: 9px;border-top:solid 2px #7c7c7c;border-right: solid 2px #7c7c7c;transform: rotate(225deg);top: 12px;left: 15px;}
 .pageControl ol li a i.nextPage{display: block;position: absolute;width:9px;height: 9px;border-top:solid 2px #7c7c7c;border-right: solid 2px #7c7c7c;transform: rotate(45deg);top: 12px;left: 10px;}
 .pageControl ol li a{height: 34px;display: block;font-size: 14px;color: #444444;line-height: 34px;position: relative;list-style: none;}
