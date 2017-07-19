@@ -50,12 +50,28 @@
             <ul class="nav Tnav">
                   <li><a href="{% url 'home' %}">home</a></li>
                   <li><a href="/clients">clients</a></li>
-                  <li><a href="{% url 'helpdesk_home' %}">ticket</a></li>
                   {% comment %}
+                  <li><a href="{% url 'helpdesk_home' %}">ticket</a></li>
                   <li><a href="/crud/applications/softwares/"><i class="fa fa-cube"></i>softwares</a></li>
                   {% endcomment %}
                   <li><a href="{% url 'orders:list' %}">orders</a></li>
                   <li><a href="{% url 'packages:list' %}">packages</a></li>
+                  <li>
+              	    <a href="#">infrastructures</a>
+              	    <div class="Tpull-down1">
+			            	  <div class="Tdown"></div>
+			            </div>
+	                  <div class="Thover1">
+                      <div class="Thover-line1"><a href="{% url 'infras:rack_list' %}">racks</a></div>
+                                {% comment %}
+				            	<div class="Thover-line1"><a href="{% url 'deployments:cloud_list' %}">Cloud</a></div>
+				            	<div class="Thover-line1"><a href="{% url 'deployments:deploy_policy_list' %}">Deploy Policy</a></div>
+				            	<div class="Thover-line1"><a href="{% url 'deployments:deploy_instance_list' %}">Deploy Instance</a></div>
+                      <div class="Thover-line1"><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></div>
+                      <div class="Thover-line1"><a href="{% url 'deployments:question_list' %}">Questions</a></div>
+                              {% endcomment %}
+	                </div>
+                  </li>
             </ul>
             {% endblock leftSiderbar %}
           </div><!--/.nav-collapse -->
