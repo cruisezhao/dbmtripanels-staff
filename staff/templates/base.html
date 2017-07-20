@@ -65,10 +65,9 @@
 	                  <div class="Thover1">
                       <div class="Thover-line1"><a href="{% url 'infras:data_center_list' %}">DataCenters</a></div>
                       <div class="Thover-line1"><a href="{% url 'infras:rack_list' %}">Racks</a></div>
-
-                          {%comment%}
-                           <div class="Thover-line1"><a href="{% url 'deployments:deploy_policy_list' %}">Deploy Policy</a></div>
-				            	<div class="Thover-line1"><a href="{% url 'deployments:deploy_instance_list' %}">Deploy Instance</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:power_list' %}">Powers</a></div>
+				       {%comment%}
+				            	      	<div class="Thover-line1"><a href="{% url 'deployments:deploy_instance_list' %}">Deploy Instance</a></div>
                       <div class="Thover-line1"><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></div>
                       <div class="Thover-line1"><a href="{% url 'deployments:question_list' %}">Questions</a></div>
                               {% endcomment %}
