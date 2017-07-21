@@ -66,8 +66,14 @@
                       <div class="Thover-line1"><a href="{% url 'infras:data_center_list' %}">DataCenters</a></div>
                       <div class="Thover-line1"><a href="{% url 'infras:rack_list' %}">Racks</a></div>
                       <div class="Thover-line1"><a href="{% url 'infras:power_list' %}">Powers</a></div>
-				       {%comment%}
-				            	      	<div class="Thover-line1"><a href="{% url 'deployments:deploy_instance_list' %}">Deploy Instance</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:driver_list' %}">Drivers</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:kvm_list' %}">KVM</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:router_list' %}">Routers</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:switche_list' %}">Switches</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:firewall_list' %}">Firewalls</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:bare_list' %}">Bare metal</a></div>
+
+                      {%comment%}
                       <div class="Thover-line1"><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></div>
                       <div class="Thover-line1"><a href="{% url 'deployments:question_list' %}">Questions</a></div>
                               {% endcomment %}
