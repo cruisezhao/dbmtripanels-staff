@@ -32,3 +32,41 @@ table tr td a:hover{text-decoration:under-line;color:#0cc285;}
 .pageControl ol li:hover a i.lastPage{border-top:solid 2px #ffffff;border-right: solid 2px #ffffff;}
 .pageControl ol li:hover a i.nextPage{border-top:solid 2px #ffffff;border-right: solid 2px #ffffff;}
 .pageControl ol li:hover span{color: #ffffff;}
+
+
+/*
+*
+*
+*
+reset-css-detail_rack
+2017-07-20-adolf
+*
+*
+*
+*/
+
+.im-wrap{
+	margin-left: 0px;
+}
+
+.inter-connections{
+	margin-top: 70px;
+}
+
+.addnew{
+	        margin: -39px 18px 10px 0px;
+			float: right;
+}
+
+
+.interfacer-table tr th:nth-of-type(4){
+	background: #ca8701;
+}
+
+.interfacer-table tr th,.interfacer-table td{
+	text-align: center;
+}
+
+.interfacer-table tr td:nth-of-type(4){
+
+}
