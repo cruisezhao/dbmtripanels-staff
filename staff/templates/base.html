@@ -73,10 +73,10 @@
                       <div class="Thover-line1"><a href="{% url 'infras:firewall_list' %}">Firewalls</a></div>
                       <div class="Thover-line1"><a href="{% url 'infras:bare_list' %}">Bare metal</a></div>
 
-                      {%comment%}
-                      <div class="Thover-line1"><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></div>
-                      <div class="Thover-line1"><a href="{% url 'deployments:question_list' %}">Questions</a></div>
-                              {% endcomment %}
+                      <div class="Thover-line1"><a href="{% url 'infras:device_maintenance_list' %}">Device Maintenance</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:interface_rack_list' %}">Interface Racks</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:interface_network_list' %}">Interface Networks</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:connection_list' %}">Connections</a></div>
 	                </div>
                   </li>
             </ul>
