@@ -50,12 +50,35 @@
             <ul class="nav Tnav">
                   <li><a href="{% url 'home' %}">home</a></li>
                   <li><a href="/clients">clients</a></li>
-                  <li><a href="{% url 'helpdesk_home' %}">ticket</a></li>
                   {% comment %}
+                  <li><a href="{% url 'helpdesk_home' %}">ticket</a></li>
                   <li><a href="/crud/applications/softwares/"><i class="fa fa-cube"></i>softwares</a></li>
                   {% endcomment %}
                   <li><a href="{% url 'orders:list' %}">orders</a></li>
                   <li><a href="{% url 'packages:list' %}">packages</a></li>
+                  <li><a href="{% url 'infras:vendor_list' %}">Vendors</a></li>
+                  <li>
+              	    <a href="#">infrastructures</a>
+              	    <div class="Tpull-down1">
+			            	  <div class="Tdown"></div>
+			            </div>
+	                  <div class="Thover1">
+                      <div class="Thover-line1"><a href="{% url 'infras:data_center_list' %}">DataCenters</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:rack_list' %}">Racks</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:power_list' %}">Powers</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:driver_list' %}">Drivers</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:kvm_list' %}">KVM</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:router_list' %}">Routers</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:switche_list' %}">Switches</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:firewall_list' %}">Firewalls</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:bare_list' %}">Bare metal</a></div>
+
+                      <div class="Thover-line1"><a href="{% url 'infras:device_maintenance_list' %}">Device Maintenance</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:interface_rack_list' %}">Interface Racks</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:interface_network_list' %}">Interface Networks</a></div>
+                      <div class="Thover-line1"><a href="{% url 'infras:connection_list' %}">Connections</a></div>
+	                </div>
+                  </li>
             </ul>
             {% endblock leftSiderbar %}
           </div><!--/.nav-collapse -->

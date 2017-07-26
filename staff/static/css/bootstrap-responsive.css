@@ -1072,11 +1072,6 @@
     float: none;
     margin-left: 0;
   }
-  .nav-collapse,
-  .nav-collapse.collapse {
-    height: 0;
-    overflow: hidden;
-  }
   .navbar .btn-navbar {
     display: block;
   }

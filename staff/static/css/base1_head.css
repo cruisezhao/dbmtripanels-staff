@@ -41,3 +41,6 @@ h1,h2,h4,h5,h6{margin: 0px;}
 .float_right p{display: inline-block;vertical-align: middle;margin-right: 20px;}
 a{color: #ffffff;}
 .pull-right a{padding-left: 20px;}
+.text-center ul{margin-bottom: 30px !important;margin-top: 0px;}
+.text-center ul li{display: inline-block;vertical-align: top;line-height: 30px;margin-right: 10px;}
+.text-center ul li a{color: #668cc2;}

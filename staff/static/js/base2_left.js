@@ -5,11 +5,11 @@ window.onload=function(){
 		if($(window).width()>767){
 			if(FHeight<$('#content_wrapper1').height()){
 				$(window).css('height','auto');
-				$('#filtration').height($('#content_wrapper1').height());			    
+				$('#filtration').height($('#content_wrapper1').height()+20);			    
 			}else{
 				$(window).css('height','100%');
-				if($(window).height()> ($('#filtration').height()+90) ){
-					$('#filtration').height($(window).height()-90);
+				if($(window).height()> ($('#filtration').height()+70) ){
+					$('#filtration').height($(window).height()-70);
 				}else{
 					$('#filtration').css('height','auto');
 					$(window).css('height','auto');
