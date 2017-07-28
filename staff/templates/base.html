@@ -6,28 +6,28 @@
   <head>
   	  <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <title>Admin.tripanels.com</title>	  
+	    <title>Admin.tripanels.com</title>
 	    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	    <link href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">	    
-	    <link href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">  	  
-	    <link href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}" rel="stylesheet">  	  
-	    <link href="{% static 'dist/css/AdminLTE.min.css' %}" rel="stylesheet">  
-	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">  
+	    <link href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+	    <link href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	    <link href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+	    <link href="{% static 'dist/css/AdminLTE.min.css' %}" rel="stylesheet">
+	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  	  <link href="{% static 'costume/costume.css' %}" rel="stylesheet"> 
+  	  <link href="{% static 'costume/costume.css' %}" rel="stylesheet">
   	  {% block styles %}
       {% endblock styles %}
        <!-- jQuery 3 -->
 		  <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
   </head>
 
-  
+
   <body class="hold-transition skin-blue sidebar-mini">
   	<div class="wrapper">
-    
+
         <!-- Main Header -->
 			  <header class="main-header">
-			
+
 			    <!-- Logo -->
 			    <a href="#" class="logo">
 			      <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -35,7 +35,7 @@
 			      <!-- logo for regular state and mobile devices -->
 			      <span class="logo-lg"><b>Tri</b>Clusters</span>
 			    </a>
-			
+
 			    <!-- Header Navbar -->
 			    <nav class="navbar navbar-static-top" role="navigation">
 			      <!-- Sidebar toggle button-->
@@ -80,7 +80,7 @@
 			            </ul>
 			          </li>
 			          <!-- /.messages-menu -->
-			
+
 			          <!-- Notifications Menu -->
 			          <li class="dropdown notifications-menu">
 			            <!-- Menu toggle button -->
@@ -154,7 +154,7 @@
 			              <!-- The user image in the menu -->
 			              <li class="user-header">
 			                <img src="{% static 'dist/img/user2-160x160.jpg' %}" class="img-circle" alt="User Image">
-			
+
 			                <p>
 			                  {{user.username}} - Web Developer
 			                  <small>Member since Nov. 2012</small>
@@ -194,13 +194,13 @@
 			      </div>
 			    </nav>
 			  </header>
-   
+
          <!-- Left side column. contains the logo and sidebar -->
 			  <aside class="main-sidebar">
-			
+
 			    <!-- sidebar: style can be found in sidebar.less -->
 			    <section class="sidebar">
-			
+
 			      <!-- Sidebar user panel (optional) -->
 			      <div class="user-panel">
 			        <div class="pull-left image">
@@ -212,7 +212,7 @@
 			          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 			        </div>
 			      </div>
-			
+
 			      <!-- search form (Optional) -->
 			      <form action="#" method="get" class="sidebar-form">
 			        <div class="input-group">
@@ -224,7 +224,7 @@
 			        </div>
 			      </form>
 			      <!-- /.search form -->
-			
+
 			      <!-- Sidebar Menu -->
 			      <ul class="sidebar-menu" data-widget="tree">
 			        <li class="header">HEADER</li>
@@ -245,15 +245,26 @@
 		                </span>
 			          </a>
 			          <ul class="treeview-menu">
-			            <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li>
-			            <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>
-			            <li><a href="{% url 'infras:power_list' %}">Powers</a></li>
-			            <li><a href="{% url 'infras:driver_list' %}">Drivers</a></li>
-			            <li><a href="{% url 'infras:kvm_list' %}">KVM</a></li>
-			            <li><a href="{% url 'infras:router_list' %}">Routers</a></li>
-			            <li><a href="{% url 'infras:switche_list' %}">Switches</a></li>
-			            <li><a href="{% url 'infras:firewall_list' %}">Firewalls</a></li>
-			            <li><a href="{% url 'infras:bare_list' %}">Bare metal</a></li>
+                  <li>
+                    <a href="javascript:;"><i class="fa fa-cube">DEVICES</i></a>
+                    <ul class="treeview-menu">
+                      <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>
+                      <li><a href="{% url 'infras:power_list' %}">Powers</a></li>
+                      <li><a href="{% url 'infras:driver_list' %}">Drivers</a></li>
+                      <li><a href="{% url 'infras:kvm_list' %}">KVM</a></li>
+                      <li><a href="{% url 'infras:router_list' %}">Routers</a></li>
+                      <li><a href="{% url 'infras:switche_list' %}">Switches</a></li>
+                      <li><a href="{% url 'infras:firewall_list' %}">Firewalls</a></li>
+                      <li><a href="{% url 'infras:bare_list' %}">Bare metal</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:;"><i class="fa fa-cube">IPS</i></a></li>
+                  <li><a href="javascript:;"><i class="fa fa-cube">CONNECTIONS</i></a></li>
+                  <li><a href="javascript:;"><i class="fa fa-cube">VENDORS</i></a></li>
+                  <li><a href="javascript:;"><i class="fa fa-cube">DEVICES</i></a></li>
+                  <li><a href="{% url 'infras:data_center_list' %}"><i class="fa fa-cube">DATA CENTER</i></a></li>
+			            <!-- <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li> -->
+
 			            {%comment%}
 			            <li><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></li>
 			            <li><a href="{% url 'deployments:question_list' %}">Questions</a></li>
@@ -266,16 +277,19 @@
 			    </section>
 			    <!-- /.sidebar -->
 			  </aside>
-        
+
         <!-- Content Wrapper. Contains page content -->
-		    <div class="content-wrapper">          
-		          {% block content %}{% endblock content %}
+		    <div class="content-wrapper">
+          <section class="content">
+              {% block content %}{% endblock content %}
+          </section>
+
 		    </div>
 
 
     </div>
   </body>
-   
+
 		<!-- Bootstrap 3.3.7 -->
 		<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 		<!-- AdminLTE App -->
@@ -291,7 +305,7 @@
 		</script>
 		<!-- Optionally, you can add Slimscroll and FastClick plugins.
 		     Both of these plugins are recommended to enhance the
-		     user experience. -->  
+		     user experience. -->
     {% block scripts %}
     {% endblock scripts %}
 </html>
