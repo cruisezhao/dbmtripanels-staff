@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   {% load staticfiles %}
@@ -12,15 +10,17 @@
 	    <link href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}" rel="stylesheet">
 
-      <link href="{% static 'dist/css/AdminLTE-select2.min.css' %}" rel="stylesheet">
+      <link href="{% static 'bower_components/select2/dist/css/select2.min.css' %}" rel="stylesheet">
       <link href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
       <link href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet">
+      <link href="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.css' %}" rel="stylesheet">
 
 
 	    <link href="{% static 'dist/css/AdminLTE.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   	  <link href="{% static 'costume/costume.css' %}" rel="stylesheet">
+      <link href="{% static 'dist/css/device-detail.css' %}" rel="stylesheet">
   	  {% block styles %}
       {% endblock styles %}
        <!-- jQuery 3 -->
@@ -290,10 +290,7 @@
 
         <!-- Content Wrapper. Contains page content -->
 		    <div class="content-wrapper">
-          <section class="content">
               {% block content %}{% endblock content %}
-          </section>
-
 		    </div>
 
 
@@ -306,6 +303,11 @@
 		<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
     <script src="{% static 'dist/js/app.min.js' %}"></script>
     <script src="{% static 'bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'bower_components/select2/dist/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'bower_components/moment/moment.js' %}"></script>
 
 		<script type="text/javascript">
 			  $(document).ready(function(){
@@ -314,6 +316,12 @@
 							    	$(this).parent().parent().addClass('active');
 							  };
 						});
+
+            $('.select2').select2();
+            $('.datetimerange').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
+            $('.datepicker').datepicker({autoclose: true});
+            //Timepicker
+            $('.timepicker').timepicker({showInputs: false});
 			  })
 		</script>
 		<!-- Optionally, you can add Slimscroll and FastClick plugins.
@@ -321,4 +329,5 @@
 		     user experience. -->
     {% block scripts %}
     {% endblock scripts %}
+
 </html>
