@@ -281,6 +281,20 @@
 			            {% endcomment %}
 			          </ul>
 			        </li>
+
+					{% comment %}ip{% endcomment %}
+					<li class="treeview">
+			          <a href="#"><i class="fa fa-tasks"></i> <span>ips</span>
+		                <span class="pull-right-container">
+		                    <i class="fa fa-angle-left pull-right"></i>
+		                </span>
+			          </a>
+			          <ul class="treeview-menu">
+			            <li><a href="{% url 'infras:vlan_list' %}">VLANS</a></li>
+			            <li><a href="{% url 'infras:prefix_list' %}">Prefixs</a></li>
+			            <li><a href="{% url 'infras:ip_address_list' %}">IP</a></li>
+			          </ul>
+			        </li> <!--/tree view -->
 			        <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Reviews</span></a></li>
 			      </ul>
 			      <!-- /.sidebar-menu -->
