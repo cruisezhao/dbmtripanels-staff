@@ -11,6 +11,12 @@
 	    <link href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+
+      <link href="{% static 'dist/css/AdminLTE-select2.min.css' %}" rel="stylesheet">
+      <link href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+      <link href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet">
+
+
 	    <link href="{% static 'dist/css/AdminLTE.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -246,7 +252,11 @@
 			          </a>
 			          <ul class="treeview-menu">
                   <li>
-                    <a href="javascript:;"><i class="fa fa-cube">DEVICES</i></a>
+                    <a href="javascript:;"><span>DEVICES</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </a>
                     <ul class="treeview-menu">
                       <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>
                       <li><a href="{% url 'infras:power_list' %}">Powers</a></li>
@@ -258,11 +268,11 @@
                       <li><a href="{% url 'infras:bare_list' %}">Bare metal</a></li>
                     </ul>
                   </li>
-                  <li><a href="javascript:;"><i class="fa fa-cube">IPS</i></a></li>
-                  <li><a href="javascript:;"><i class="fa fa-cube">CONNECTIONS</i></a></li>
-                  <li><a href="javascript:;"><i class="fa fa-cube">VENDORS</i></a></li>
-                  <li><a href="javascript:;"><i class="fa fa-cube">DEVICES</i></a></li>
-                  <li><a href="{% url 'infras:data_center_list' %}"><i class="fa fa-cube">DATA CENTER</i></a></li>
+                  <li><a href="javascript:;">IPS</a></li>
+                  <li><a href="javascript:;">CONNECTIONS</a></li>
+                  <li><a href="javascript:;">VENDORS</a></li>
+                  <li><a href="javascript:;">DEVICES</a></li>
+                  <li><a href="{% url 'infras:data_center_list' %}">DATA CENTER</a></li>
 			            <!-- <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li> -->
 
 			            {%comment%}
@@ -294,6 +304,9 @@
 		<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 		<!-- AdminLTE App -->
 		<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+    <script src="{% static 'dist/js/app.min.js' %}"></script>
+    <script src="{% static 'bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+
 		<script type="text/javascript">
 			  $(document).ready(function(){
 			  	  $('ul.sidebar-menu li a span').each(function(index,itself){
