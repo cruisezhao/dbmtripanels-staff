@@ -59,12 +59,14 @@ INSTALLED_APPS = [
 
     'authtools',
     'crispy_forms',
+    'django_filters',
     'django_tables2',
     'crudbuilder',
     #'staff',
     'bootstrapform',
     'helpdesk',
     'widget_tweaks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -202,6 +204,12 @@ AUTHENTICATION_BACKENDS = ['common.apps.users.backends.AllowStaffGroupUsersModel
 
 #tickets
 SITE_ID = 2
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
 
 #crudbuilder
 LOGIN_REQUIRED_FOR_CRUD = True
