@@ -330,11 +330,11 @@
 
 		<script type="text/javascript">
 			  $(document).ready(function(){
-			  	  // $('ul.sidebar-menu li a span').each(function(index,itself){
-						// 	  if(window.location.pathname.indexOf($(this).text())>0){
-						// 	    	$(this).parent().parent().addClass('active');
-						// 	  };
-						// });
+			  	  $('ul.sidebar-menu li a span').each(function(index,itself){
+							  if(window.location.pathname.indexOf($(this).text())>0){
+							    	$(this).parent().parent().addClass('active');
+							  };
+						});
 
             $('.select2').select2();
             $('.datetimerange').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
