@@ -18,6 +18,7 @@
 
 	    <link href="{% static 'dist/css/AdminLTE.min.css' %}" rel="stylesheet">
 	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">
+      <link href="{% static 'dist/css/skins/_all-skins.min.css' %}" rel="stylesheet">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   	  <link href="{% static 'costume/costume.css' %}" rel="stylesheet">
       <link href="{% static 'dist/css/device-detail.css' %}" rel="stylesheet">
@@ -232,7 +233,7 @@
 			      <!-- /.search form -->
 
 			      <!-- Sidebar Menu -->
-			      <ul class="sidebar-menu" data-widget="tree">
+			      <ul class="sidebar-menu">
 			        <li class="header">HEADER</li>
 			        <!-- Optionally, you can add icons to the links -->
 			        <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> <span>dashboard</span></a></li>
@@ -252,7 +253,7 @@
 			          </a>
 			          <ul class="treeview-menu">
                   <li>
-                    <a href="javascript:;"><span>DEVICES</span>
+                    <a href="javascript:;"><span>Device</span>
                       <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
@@ -260,7 +261,7 @@
                     <ul class="treeview-menu">
                       <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>
                       <li><a href="{% url 'infras:power_list' %}">Powers</a></li>
-                      <li><a href="{% url 'infras:driver_list' %}">Drivers</a></li>
+                      <li><a href="{% url 'infras:driver_list' %}">Drivces</a></li>
                       <li><a href="{% url 'infras:kvm_list' %}">KVM</a></li>
                       <li><a href="{% url 'infras:router_list' %}">Routers</a></li>
                       <li><a href="{% url 'infras:switche_list' %}">Switches</a></li>
@@ -269,10 +270,10 @@
                     </ul>
                   </li>
                   <li><a href="javascript:;">IPS</a></li>
-                  <li><a href="javascript:;">CONNECTIONS</a></li>
-                  <li><a href="javascript:;">VENDORS</a></li>
-                  <li><a href="javascript:;">DEVICES</a></li>
-                  <li><a href="{% url 'infras:data_center_list' %}">DATA CENTER</a></li>
+                  <li><a href="javascript:;">Connections</a></li>
+                  <li><a href="javascript:;">Vendos</a></li>
+                  <li><a href="javascript:;">Devices</a></li>
+                  <li><a href="{% url 'infras:data_center_list' %}">Data Center</a></li>
 			            <!-- <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li> -->
 
 			            {%comment%}
@@ -329,11 +330,11 @@
 
 		<script type="text/javascript">
 			  $(document).ready(function(){
-			  	  $('ul.sidebar-menu li a span').each(function(index,itself){
-							  if(window.location.pathname.indexOf($(this).text())>0){
-							    	$(this).parent().parent().addClass('active');
-							  };
-						});
+			  	  // $('ul.sidebar-menu li a span').each(function(index,itself){
+						// 	  if(window.location.pathname.indexOf($(this).text())>0){
+						// 	    	$(this).parent().parent().addClass('active');
+						// 	  };
+						// });
 
             $('.select2').select2();
             $('.datetimerange').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
