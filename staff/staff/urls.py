@@ -40,3 +40,7 @@ urlpatterns = [
     #infra
     url(r'^infras/', include(urls4staff, namespace='infras')),
 ]
+from common.apps.infrastructure.api import urls as apiurl
+urlpatterns += [
+    url(r'^api/device/', include(apiurl)),
+]
