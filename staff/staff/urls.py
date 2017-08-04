@@ -23,6 +23,7 @@ from common.apps.clients import url_staff as clientsurl
 from common.apps.packages import urls_staff as packageurl
 from common.apps.deployments import urls_staff as deployurl
 from common.apps.infrastructure import urls4staff
+from common.apps.infrastructure.api import urls as api_infras_url
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
@@ -40,7 +41,7 @@ urlpatterns = [
     #infra
     url(r'^infras/', include(urls4staff, namespace='infras')),
 ]
-from common.apps.infrastructure.api import urls as apiurl
+
 urlpatterns += [
-    url(r'^api/device/', include(apiurl)),
+    url(r'^api/infras/', include(api_infras_url)),
 ]
