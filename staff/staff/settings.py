@@ -217,3 +217,6 @@ PERMISSION_REQUIRED_FOR_CRUD = False
 PROJECT_NAME = 'staff'
 
 PAGINATE_COUNT = 2
+
+#test base path for api
+BASE_PATH = "http://127.0.0.1:8000"
