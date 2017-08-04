@@ -244,7 +244,6 @@
 			        {% endcomment %}
 			        <li><a href="{% url 'orders:list' %}"><i class="fa fa-send-o"></i> <span>orders</span></a></li>
 			        <li><a href="{% url 'packages:list' %}"><i class="fa fa-cube"></i> <span>packages</span></a></li>
-			        <li><a href="{% url 'infras:vendor_list' %}"><i class="fa fa-send-o"></i> <span>Vendors</span></a></li>
 			        <li class="treeview">
 			          <a href="#"><i class="fa fa-tasks"></i> <span>infrastructures</span>
 		                <span class="pull-right-container">
@@ -264,14 +263,14 @@
                       <li><a href="{% url 'infras:driver_list' %}">Drivces</a></li>
                       <li><a href="{% url 'infras:kvm_list' %}">KVM</a></li>
                       <li><a href="{% url 'infras:router_list' %}">Routers</a></li>
-                      <li><a href="{% url 'infras:switche_list' %}">Switches</a></li>
+                      <li><a href="{% url 'infras:switch_list' %}">Switches</a></li>
                       <li><a href="{% url 'infras:firewall_list' %}">Firewalls</a></li>
                       <li><a href="{% url 'infras:bare_list' %}">Bare metal</a></li>
                     </ul>
                   </li>
                   <li><a href="javascript:;">IPS</a></li>
                   <li><a href="javascript:;">Connections</a></li>
-                  <li><a href="javascript:;">Vendos</a></li>
+                  <li><a href="{% url 'infras:vendor_list' %}">Vendors</a></li>
                   <li><a href="{% url 'infras:data_center_list' %}">Data Center</a></li>
 			            <!-- <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li> -->
 
