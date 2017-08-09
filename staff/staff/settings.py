@@ -70,6 +70,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -217,3 +218,6 @@ PERMISSION_REQUIRED_FOR_CRUD = False
 PROJECT_NAME = 'staff'
 
 PAGINATE_COUNT = 2
+
+#cross site api call
+CORS_ORIGIN_ALLOW_ALL=True
