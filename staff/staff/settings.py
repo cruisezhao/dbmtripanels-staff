@@ -70,6 +70,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -218,5 +219,5 @@ PROJECT_NAME = 'staff'
 
 PAGINATE_COUNT = 10
 
-#test base path for api
-BASE_PATH = "http://127.0.0.1:8000/"
+#cross site api call
+CORS_ORIGIN_ALLOW_ALL=True
