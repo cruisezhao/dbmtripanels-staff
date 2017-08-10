@@ -233,7 +233,7 @@
 			      <!-- /.search form -->
 
 			      <!-- Sidebar Menu -->
-			      <ul class="sidebar-menu">
+			      <ul class="sidebar-menu level3">
 			        <li class="header">HEADER</li>
 			        <!-- Optionally, you can add icons to the links -->
 			        <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> <span>dashboard</span></a></li>
@@ -243,21 +243,21 @@
 			        <li><a href="/crud/applications/softwares/"><i class="fa fa-cube"></i> <span>softwares</span></a></li>
 			        {% endcomment %}
 			        <li><a href="{% url 'orders:list' %}"><i class="fa fa-send-o"></i> <span>orders</span></a></li>
-			        <li><a href="{% url 'packages:list' %}"><i class="fa fa-cube"></i> <span>packages</span></a></li>
+			        <li><a href="{% url 'packages:list' %}"><i class="fa fa-archive"></i> <span>packages</span></a></li>
 			        <li class="treeview">
 			          <a href="#"><i class="fa fa-tasks"></i> <span>infrastructures</span>
 		                <span class="pull-right-container">
 		                    <i class="fa fa-angle-left pull-right"></i>
 		                </span>
-			          </a>
-			          <ul class="treeview-menu">
+                </a>
+			          <ul class="treeview-menu level3">
                   <li>
                     <a href="javascript:;"><span>Device</span>
                       <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                       </span>
                     </a>
-                    <ul class="treeview-menu">
+                    <ul class="treeview-menu level3">
                       <li><a href="{% url 'infras:bare_list' %}">Bare metal</a></li>
                       <li><a href="{% url 'infras:firewall_list' %}">Firewalls</a></li>
                       <li><a href="{% url 'infras:switch_list' %}">Switches</a></li>
@@ -265,15 +265,25 @@
                       <li><a href="{% url 'infras:kvm_list' %}">KVM</a></li>
                       <li><a href="{% url 'infras:driver_list' %}">Drives</a></li>
                       <li><a href="{% url 'infras:power_list' %}">Powers</a></li>
-                      <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>  
+                      <li><a href="{% url 'infras:rack_list' %}">Racks</a></li>
                     </ul>
                   </li>
-                  <li><a href="javascript:;">IPS</a></li>
+                  <li>
+                      <a href="javascript:;"><span>ips</span>
+                          <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                      </a>
+                    <ul class="treeview-menu level3">
+                      <li><a href="{% url 'infras:vlan_list' %}">VLANS</a></li>
+                      <li><a href="{% url 'infras:prefix_list' %}">Prefixs</a></li>
+                      <li><a href="{% url 'infras:ip_address_list' %}">IP</a></li>
+                      <li><a href="{% url 'infras:ip_interface_list' %}">IP Interface</a></li>
+                    </ul>
+                  </li>
                   <li><a href="{% url 'infras:connection_list' %}">Connections</a></li>
                   <li><a href="{% url 'infras:vendor_list' %}">Vendors</a></li>
                   <li><a href="{% url 'infras:data_center_list' %}">Data Center</a></li>
-			            <!-- <li><a href="{% url 'infras:data_center_list' %}">DataCenters</a></li> -->
-
 			            {%comment%}
 			            <li><a href="{% url 'deployments:instance_configuration_list' %}">Instance Config</a></li>
 			            <li><a href="{% url 'deployments:question_list' %}">Questions</a></li>
@@ -281,21 +291,7 @@
 			          </ul>
 			        </li>
 
-					{% comment %}ip{% endcomment %}
-					<li class="treeview">
-			          <a href="#"><i class="fa fa-tasks"></i> <span>ips</span>
-		                <span class="pull-right-container">
-		                    <i class="fa fa-angle-left pull-right"></i>
-		                </span>
-			          </a>
-			          <ul class="treeview-menu">
-			            <li><a href="{% url 'infras:vlan_list' %}">VLANS</a></li>
-			            <li><a href="{% url 'infras:prefix_list' %}">Prefixs</a></li>
-			            <li><a href="{% url 'infras:ip_address_list' %}">IP</a></li>
-						<li><a href="{% url 'infras:ip_interface_list' %}">IP Interface</a></li>
-			          </ul>
-			        </li> <!--/tree view -->
-			        <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Reviews</span></a></li>
+					  {% comment %}ip{% endcomment %}
 			      </ul>
 			      <!-- /.sidebar-menu -->
 			    </section>
@@ -399,9 +395,22 @@
     });
 			  })
 		</script>
-		<!-- Optionally, you can add Slimscroll and FastClick plugins.
-		     Both of these plugins are recommended to enhance the
-		     user experience. -->
+
+    <script>
+       $(document).ready(function() {
+        var pageURL = window.location.pathname;
+        var thisBtn = $('.level3 a');
+        thisBtn.each(function(i) {
+          if($(this).attr('href') === pageURL){
+                $(this).parent().css('background', '#576970');
+                $(this).parents('.level2').addClass('active');
+                $(this).parents('.level3').parent().addClass('active');
+          }
+        });
+        console.log('pageURL:' + pageURL);
+       });
+    </script>
+
     {% block scripts %}
     {% endblock scripts %}
 
