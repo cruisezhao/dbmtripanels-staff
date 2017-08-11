@@ -401,13 +401,16 @@
         var pageURL = window.location.pathname;
         var thisBtn = $('.level3 a');
         thisBtn.each(function(i) {
-          if($(this).attr('href') === pageURL){
+          var $thisURL = $(this).attr('href');
+          console.log(pageURL.indexOf($thisURL)<0);
+          if( $thisURL === pageURL || pageURL.indexOf($thisURL) === 0){
                 $(this).parent().css('background', '#576970');
                 $(this).parents('.level2').addClass('active');
                 $(this).parents('.level3').parent().addClass('active');
           }
         });
         console.log('pageURL:' + pageURL);
+
        });
     </script>
 
