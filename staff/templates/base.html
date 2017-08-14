@@ -20,8 +20,7 @@
 	    <link href="{% static 'dist/css/skins/skin-blue.min.css' %}" rel="stylesheet">
       <link href="{% static 'dist/css/skins/_all-skins.min.css' %}" rel="stylesheet">
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  	  <link href="{% static 'costume/costume.css' %}" rel="stylesheet">
-      <link href="{% static 'dist/css/reset.css' %}" rel="stylesheet">
+      <link href="{% static 'tripanel/reset.css' %}" rel="stylesheet">
   	  {% block styles %}
       {% endblock styles %}
        <!-- jQuery 3 -->
@@ -327,96 +326,7 @@
     <script src="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
     <script src="{% static 'bower_components/moment/moment.js' %}"></script>
 
-		<script type="text/javascript">
-			  $(document).ready(function(){
-			  	  $('ul.sidebar-menu li a span').each(function(index,itself){
-							  if(window.location.pathname.indexOf($(this).text())>0){
-							    	$(this).parent().parent().addClass('active');
-							  };
-						});
-
-            $('.select2').select2();
-            $('.datetimerange').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
-            $('.datepicker').datepicker({autoclose: true});
-            //Timepicker
-            $('.timepicker').timepicker({showInputs: false});
-		    $('select[filter-for]').change(function() {
-
-        // Resolve child field by ID specified in parent
-        var child_name = $(this).attr('filter-for');
-        var child_field = $('#id_' + child_name);
-        var child_selected = child_field.val();
-
-        // Wipe out any existing options within the child field and create a default option
-        child_field.empty();
-        child_field.append($("<option></option>").attr("value", "").text("---------"));
-
-        if ($(this).val() || $(this).attr('nullable') == 'true') {
-            var api_url = child_field.attr('api-url') + '&limit=1000';
-            var disabled_indicator = child_field.attr('disabled-indicator');
-            var initial_value = child_field.attr('initial');
-            var display_field = child_field.attr('display-field') || 'name';
-
-            // Determine the filter fields needed to make an API call
-            var filter_regex = /\{\{([a-z_]+)\}\}/g;
-            var match;
-            var rendered_url = api_url;
-            while (match = filter_regex.exec(api_url)) {
-                var filter_field = $('#id_' + match[1]);
-                if (filter_field.val()) {
-                    rendered_url = rendered_url.replace(match[0], filter_field.val());
-                } else if (filter_field.attr('nullable') == 'true') {
-                    rendered_url = rendered_url.replace(match[0], '0');
-                }
-            }
-
-            // If all URL variables have been replaced, make the API call
-            if (rendered_url.search('{{') < 0) {
-                console.log(child_name + ": Fetching " + rendered_url);
-                $.ajax({
-                    url: rendered_url,
-                    dataType: 'json',
-                    success: function(response, status) {
-                        console.log(response);
-                        $.each(response, function(index, choice) {
-                            var option = $("<option></option>").attr("value", choice.id).text(choice[display_field]);
-                            if (disabled_indicator && choice[disabled_indicator] && choice.id != initial_value) {
-                                option.attr("disabled", "disabled");
-                            } else if (choice.id == child_selected) {
-                                option.attr("selected", "selected");
-                            }
-                            child_field.append(option);
-                        });
-                    }
-                });
-            }
-
-        }
-
-        // Trigger change event in case the child field is the parent of another field
-        child_field.change();
-
-    });
-			  })
-		</script>
-
-    <script>
-       $(document).ready(function() {
-        var pageURL = window.location.pathname;
-        var thisBtn = $('.level3 a');
-        thisBtn.each(function(i) {
-          var $thisURL = $(this).attr('href');
-          console.log(pageURL.indexOf($thisURL)<0);
-          if( $thisURL === pageURL || pageURL.indexOf($thisURL) === 0){
-                $(this).parent().css('background', '#576970');
-                $(this).parents('.level2').addClass('active');
-                $(this).parents('.level3').parent().addClass('active');
-          }
-        });
-        console.log('pageURL:' + pageURL);
-
-       });
-    </script>
+  	<script src="{% static 'tripanel/staff.js' %}" type="text/javascript"></script>
 
     {% block scripts %}
     {% endblock scripts %}
